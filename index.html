@@ -105,6 +105,45 @@
             height: 700px;
             background-color: white;
         }
+        .arrows{
+            display: flex;
+           position: absolute;
+            top:420px;
+            text-align: center;
+            padding: inherit;
+            vertical-align: 20px;
+     vertical-align: middle;
+          
+            
+        }
+        .arrow{
+            margin:10px;
+            width:70px;
+            height:70px;
+            background-color: aqua;
+            user-select: none;
+            border-radius: 50px;
+        }
+        #up{
+            position:relative;
+            top:0px;
+            left:70px;
+        }
+        #down{
+            position:relative;
+            top:110px;
+            left:-20px;
+        }
+        #right{
+            position:relative;
+            top:55px;
+            left:-140px;
+        }
+        #left{
+            position:relative;
+            top:55px;
+            left:-170px;
+        }
     </style>
 </head>
 <body class="screen">
@@ -120,6 +159,12 @@
     <div class="road2" id="road2Id"></div>
     <div class="firstinvisiblediv"></div>
     <div class="invisiblediv"></div>
+    <div class = "arrows">
+    <div class="arrow" id="up"><p>Up</p></div>
+    <div class="arrow" id="down"><p>Down</p></div>
+    <div class="arrow" id="left"><p>Left</p></div>
+    <div class="arrow" id="right"><p>Right</p></div>
+        </div>
 <script>
     // Переменные для хранения параметров
     let playerX;
@@ -174,6 +219,44 @@
             
     return barrel;
 }
+up.addEventListener('mousedown', function(){
+    
+     playerDirY = -1; //car moving on div 
+     player.style.transform = "rotate(170deg)";
+})
+    up.addEventListener('mouseup', function(){
+ player.style.transform = "rotate(180deg)";
+     playerDirY = 0;
+})
+    
+    down.addEventListener('mousedown', function(){
+                 player.style.transform = "rotate(190deg)";
+     playerDirY = 1; //car moving on div 
+})
+    down.addEventListener('mouseup', function(){
+ player.style.transform = "rotate(180deg)";
+     playerDirY = 0;
+})
+       right.addEventListener('mousedown', function(){
+    
+     playerDirX = 1; //car moving on div 
+
+})
+    right.addEventListener('mouseup', function(){
+ 
+     playerDirX = 0;
+})
+       left.addEventListener('mousedown', function(){
+    
+     playerDirX = -1; //car moving on div 
+})
+    left.addEventListener('mouseup', function(){
+ 
+     playerDirX = 0;
+        
+})
+    
+    
 document.addEventListener('keydown', function(e) {
     if (e.key === "ArrowUp"){   
         playerDirY = -1;
