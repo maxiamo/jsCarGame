@@ -219,38 +219,38 @@
             
     return barrel;
 }
-up.addEventListener('mousedown', function(){
+up.addEventListener('touchstart', function(){
     
      playerDirY = -1; //car moving on div 
      player.style.transform = "rotate(170deg)";
 })
-    up.addEventListener('mouseup', function(){
+    up.addEventListener('touchend', function(){
  player.style.transform = "rotate(180deg)";
      playerDirY = 0;
 })
     
-    down.addEventListener('mousedown', function(){
+    down.addEventListener('touchstart', function(){
                  player.style.transform = "rotate(190deg)";
      playerDirY = 1; //car moving on div 
 })
-    down.addEventListener('mouseup', function(){
+    down.addEventListener('touchend', function(){
  player.style.transform = "rotate(180deg)";
      playerDirY = 0;
 })
-       right.addEventListener('mousedown', function(){
+       right.addEventListener('touchstart', function(){
     
      playerDirX = 1; //car moving on div 
 
 })
-    right.addEventListener('mouseup', function(){
+    right.addEventListener('touchend', function(){
  
      playerDirX = 0;
 })
-       left.addEventListener('mousedown', function(){
+       left.addEventListener('touchstart', function(){
     
      playerDirX = -1; //car moving on div 
 })
-    left.addEventListener('mouseup', function(){
+    left.addEventListener('touchend', function(){
  
      playerDirX = 0;
         
